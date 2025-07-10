@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@base {
+    @apply bg-stone-100;
+    @apply text-gray-800;
+    @apply font-sans;
+}
+
+@theme {
+    --font-sans: "Montserrat", sans-serif;
+    --font-serif: "Libertinus Math", serif;
+
+    --color-primary: #009473;
+    --color-secondary: #0D3B66;
+    --color-accent: #D7263D;
+
+    --breakpoint-xs: 420px;
+}
