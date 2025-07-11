@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-@base {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     @apply bg-stone-100;
     @apply text-gray-800;
     @apply font-sans;

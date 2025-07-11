@@ -31,33 +31,41 @@
 
     </header>
     <!-- Mobile menu -->
-    <div id="menu"
+    <nav id="menu"
         class="fixed top-0 left-0 right-0 bg-primary text-stone-50 font-bold shadow shadow-stone-800/60 pb-8 md:px-12 z-40 -translate-y-full overflow-hidden"
         data-mobile-state="closed">
-        <ul class="space-y-2 [&>li]:px-4 [&>li]:py-2 pt-4">
-            <li class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer">
-                <a href="/" class="">Inicio</a>
+        <ul class="space-y-2 [&_a]:px-4 [&_a]:py-2 pt-4">
+            <li data-menu-animate="hor"
+                class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer translate-x-full opacity-0">
+                <a class="block w-full" href="#inicio" data-nav-id="inicio" data-nav-anchor data-nav-active>Inicio</a>
             </li>
-            <li class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer">
-                <a href="#">Acerca de Nosotros</a>
+            <li data-menu-animate="hor"
+                class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer translate-x-full opacity-0">
+                <a class="block w-full" href="#nosotros" data-nav-id="nosotros" data-nav-anchor>Acerca de Nosotros</a>
             </li>
-            <li class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer">
-                <a href="#">Servicio de Limpieza</a>
+            <li data-menu-animate="hor"
+                class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer translate-x-full opacity-0">
+                <a class="block w-full" href="#airbnb" data-nav-id="airbnb" data-nav-anchor>Servicio de Limpieza</a>
             </li>
-            <li class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer">
-                <a href="#">Servicio de Lavanderia</a>
+            <li data-menu-animate="hor"
+                class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer translate-x-full opacity-0">
+                <a class="block w-full" href="#lavanderia" data-nav-id="lavanderia" data-nav-anchor>Servicio de Lavanderia</a>
             </li>
-            <li class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer">
-                <a href="#">Servicio de Fumigación</a>
+            <li data-menu-animate="hor"
+                class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer translate-x-full opacity-0">
+                <a class="block w-full" href="#fumigacion" data-nav-id="fumigacion" data-nav-anchor>Servicio de Fumigación</a>
             </li>
-            <li class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer">
-                <a href="#">Cobertura</a>
+            <li data-menu-animate="hor"
+                class="hover:bg-gray-800/20 active:bg-gray-800/20 hover:cursor-pointer translate-x-full opacity-0">
+                <a class="block w-full" href="#cobertura" data-nav-id="cobertura" data-nav-anchor>Cobertura</a>
             </li>
-            <li class="mt-4">
-                <a class="block text-center font-bold w-full bg-accent py-2 rounded-full uppercase" href="#">Contactanos</a>
+            <li data-menu-animate="ver" class="mt-4 translate-y-full opacity-0">
+                <a class="block text-center font-bold w-full bg-accent py-2 rounded-full uppercase" href="#contacto">
+                    Contactanos
+                </a>
             </li>
         </ul>
-    </div>
+    </nav>
 
     <section class="relative h-[95vh] z-0" id="inicio">
         <div class="absolute inset-0 z-0">
@@ -138,8 +146,7 @@
             </path>
         </svg>
     </section>
-    <section
-        id="lavanderia"
+    <section id="lavanderia"
         class="relative pt-40 pb-24 px-4 -mt-20 xs:-mt-44 xs:pt-56 md:px-12 lg:-mt-60 lg:pt-72 xl:-mt-80 xl:pt-96 z-0">
         <div class="relative flex flex-col z-10 gap-4 xl:flex-row">
             <div class="basis-1/2 shrink grow space-y-4 my-auto">
@@ -250,25 +257,25 @@
                 <h3 class="text-xl font-medium tracking-wide uppercase">Menu</h3>
                 <ul class="space-y-2 text-lg">
                     <li class="underline underline-offset-2">
-                        <a href="/" class="">Inicio</a>
+                        <a class="block w-full" href="#inicio" data-nav-anchor>Inicio</a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">Acerca de Nosotros</a>
+                        <a class="block w-full" href="#nosotros" data-nav-anchor>Acerca de Nosotros</a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">Servicio de Limpieza</a>
+                        <a class="block w-full" href="#airbnb" data-nav-anchor>Servicio de Limpieza</a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">Servicio de Lavanderia</a>
+                        <a class="block w-full" href="#lavanderia" data-nav-anchor>Servicio de Lavanderia</a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">Servicio de Fumigación</a>
+                        <a class="block w-full" href="#fumigacion" data-nav-anchor>Servicio de Fumigación</a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">Cobertura</a>
+                        <a class="block w-full" href="#cobertura" data-nav-anchor>Cobertura</a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">Contactanos</a>
+                        <a class="block w-full" href="#contacto">Contactanos</a>
                     </li>
                 </ul>
             </div>
@@ -276,21 +283,21 @@
                 <h3 class="text-xl font-medium tracking-wide uppercase">Contacto</h3>
                 <ul class="flex items-center justify-center gap-6 text-lg">
                     <li class="underline underline-offset-2">
-                        <a href="#">
+                        <a href="https://www.facebook.com/limpiezaqnr/" target="_blank">
                             <svg class="h-8 w-8 fill-current">
                                 <use href="/fb.svg#fb"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">
+                        <a href="https://www.instagram.com/limpiezaqnr/" target="_blank">
                             <svg class="h-9 w-9 fill-current">
                                 <use href="/ig.svg#ig"></use>
                             </svg>
                         </a>
                     </li>
                     <li class="underline underline-offset-2">
-                        <a href="#">
+                        <a href="https://www.whatsapp.com/send?phone=618812345678" target="_blank">
                             <svg class="h-8 w-8 fill-current">
                                 <use href="/wsp.svg#wsp"></use>
                             </svg>
