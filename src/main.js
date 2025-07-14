@@ -1,8 +1,8 @@
 import gsap from 'gsap';
 import * as animations from './animations.js';
 
-const COLOR_PRIMARY = '#009473FF';
-const COLOR_PRIMARY_TRANSPARENT = '#00947300';
+const COLOR_PRIMARY = '#f6f5f5ff';
+const COLOR_PRIMARY_TRANSPARENT = '#f6f5f500';
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggler = document.querySelector('#menu-toggler');
@@ -28,12 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (ent.isIntersecting) {
             header.setAttribute('data-at-top', 1);
-            gsap.to(header, { y: '0%', background: COLOR_PRIMARY_TRANSPARENT });
+            gsap.to(header, { y: '0%', background: COLOR_PRIMARY_TRANSPARENT, boxShadow: '' });
+            gsap.to(menuToggler, { color: '#fff' });
             gsap.set(header, { position: 'absolute', y: '-100%' })
         } else {
             header.setAttribute('data-at-top', 0);
             gsap.set(header, { position: 'fixed', y: '-100%' })
-            gsap.to(header, { y: '0%', background: COLOR_PRIMARY });
+            gsap.to(header, { y: '0%', background: COLOR_PRIMARY, boxShadow: '0px 3px 5px 2px var(--color-stone-200)'});
+            gsap.to(menuToggler, { color: '#000' });
         }
     }
 
@@ -71,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function handleNavigationClicks() {
     const navAnchorEls = document.querySelectorAll('[data-nav-anchor]');
     const defaultActiveParent = document.querySelector('[data-nav-active]').parentElement;
-    defaultActiveParent.style.backgroundColor = "var(--color-stone-50)";
-    defaultActiveParent.style.color = "var(--color-stone-800)";
+    defaultActiveParent.style.backgroundColor = "var(--color-primary-dark)";
+    defaultActiveParent.style.color = "var(--color-stone-50)";
     defaultActiveParent.style.fontWeight = "var(--font-bold)";
 
     for (const anchor of navAnchorEls) {
@@ -103,6 +105,7 @@ function openMenu(tl) {
     document.getElementById('menu').setAttribute('data-mobile-state', 'open');
     tl.add("start")
         .to('#menu', { y: '3rem' })
+        .to('#menu-toggler', { color: '#000' }, 0)
         .to('[data-menu-animate="hor"', { x: '0%', opacity: 1, stagger: 0.1, duration: 0.4 }, "<50%")
         .to('[data-menu-animate="ver"', { y: '0%', opacity: 1, duration: 0.4 }, "<")
         .to('[data-toggler-line="2"]', {
@@ -130,9 +133,11 @@ function openMenu(tl) {
 
 function closeMenu(tl) {
     document.getElementById('menu').setAttribute('data-mobile-state', 'closed');
-    tl.to('#menu', {
-        y: '-100%',
-    })
+    tl.add('start')
+        .to('#menu', {
+            y: '-100%',
+        })
+        .to('#menu-toggler', { color: '#fff' }, 0)
         .to('[data-menu-animate="hor"', { x: '100%', opacity: 0 })
         .to('[data-menu-animate="ver"', { y: '100%', opacity: 0 })
         .to('[data-toggler-line="2"]', {

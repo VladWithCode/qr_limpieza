@@ -14,9 +14,20 @@ body {
     --font-sans: "Montserrat", sans-serif;
     --font-serif: "Libertinus Math", serif;
 
-    --color-primary: #009473;
-    --color-secondary: #0D3B66;
-    --color-accent: #D7263D;
+    /* Primary colors (greens) */
+    --color-primary-dark: #1bac90;
+    --color-primary: #67c18c;
+    --color-primary-light: #79c58c;
+
+    /* Secondary colors (blues) */
+    --color-secondary-dark: #14618a;
+    --color-secondary: #1e92d2;
+    --color-secondary-light: #0da1db;
+
+    /* Accent colors (pinks and orange) */
+    --color-accent: #f05988;
+    --color-accent-light: #f16780;
+    --color-warning: #f48665;
 
     --breakpoint-xs: 420px;
 }
