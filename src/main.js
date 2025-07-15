@@ -1,5 +1,7 @@
 import gsap from 'gsap';
 import * as animations from './animations.js';
+import { PopupManager } from './popupManager.js';
+//import './tablePopup.js';
 
 const COLOR_PRIMARY = '#f6f5f5ff';
 const COLOR_PRIMARY_TRANSPARENT = '#f6f5f500';
@@ -34,12 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             header.setAttribute('data-at-top', 0);
             gsap.set(header, { position: 'fixed', y: '-100%' })
-            gsap.to(header, { y: '0%', background: COLOR_PRIMARY, boxShadow: '0px 3px 5px 2px var(--color-stone-200)'});
+            gsap.to(header, { y: '0%', background: COLOR_PRIMARY, boxShadow: '0px 3px 5px 2px var(--color-stone-200)' });
             gsap.to(menuToggler, { color: '#000' });
         }
     }
 
     handleNavigationClicks();
+
+    // Popup Manager
+    const popupManager = new PopupManager({
+        openBtnId: 'openPopupBtn',
+        closeBtnId: 'closePopupBtn',
+        popupId: 'popup',
+        imageId: 'popupImage',
+        imageContainerId: 'imageContainer',
+    });
+
+    const detailsPopup = new PopupManager({
+        openBtnId: 'openDetailsBtn',
+        closeBtnId: 'closeDetailsBtn',
+        popupId: 'popupDetails',
+        imageId: 'popupDetailsImage',
+        imageContainerId: 'imageDetailsContainer',
+    });
 
     function handleMenuToggle() {
         const tl = gsap.timeline({ defaults: { duration: 0.35, ease: 'power2.inOut' } });
