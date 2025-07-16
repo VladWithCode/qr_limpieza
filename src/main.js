@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     handleNavigationClicks();
 
     // Popup Manager
-    const popupManager = new PopupManager({
+    new PopupManager({
         openBtnId: 'openPopupBtn',
         closeBtnId: 'closePopupBtn',
         popupId: 'popup',
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imageContainerId: 'imageContainer',
     });
 
-    const detailsPopup = new PopupManager({
+    new PopupManager({
         openBtnId: 'openDetailsBtn',
         closeBtnId: 'closeDetailsBtn',
         popupId: 'popupDetails',

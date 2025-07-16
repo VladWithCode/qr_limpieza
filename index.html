@@ -14,12 +14,11 @@
     <script type="module" src="/src/main.js" defer></script>
 </head>
 
-<body class="w-screen overflow-x-hidden">
+<body class="w-screen overflow-x-hidden" data-scrolling="0">
     <div id="top-osbv-target" class="absolute h-px top-[90vh] left-0 right-0 pointer-events-none"></div>
     <header id="header" class="absolute top-0 left-0 right-0 h-14 text-stone-50 flex items-center z-45 px-4 md:px-12">
         <a class="text-stone-50 -translate-y-9 opacity-0 h-10" data-view-animate="fadeIn">
             <img src="/logo_1.webp" alt="logo" class="h-full md:h-16">
-            <!--<p class="text-2xl font-extrabold tracking-wider">Q&R</p>-->
         </a>
         <button id="menu-toggler"
             class="relative ml-auto h-9 w-9 flex flex-col justify-center items-center rounded-full gap-1 bg-stone-50/0 hover:bg-stone-50/100 hover:text-stone-800 active:bg-stone-50/100 active:text-stone-800 hover:cursor-pointer hover:gap-0.5 active:gap-0 transition-[background,color,gap] -translate-y-9 opacity-0"
@@ -98,9 +97,6 @@
         <div class="space-y-4 my-auto">
             <h2 class="text-4xl font-bold opacity-0 translate-y-20" data-view-animate="fadeIn" data-view-animate-pos="">
                 ¿Quienes Somos?
-                <!--<span class="block text-primary-dark">-->
-                <!--    Especializado-->
-                <!--</span>-->
             </h2>
             <p class="translate-y-20 opacity-0" data-view-animate="fadeIn" data-view-animate-pos="<70%">
                 Somos una empresa orgullosamente mexicana con presencia en distintos estados de la república distinguida
@@ -117,7 +113,7 @@
 
     <section class="relative z-10">
         <div class="absolute inset-0 z-0">
-            <img class="h-full w-full object-cover brightness-50" src="/service_1.webp" alt="">
+            <img class="h-full w-full object-cover object-center brightness-50" src="/service_4.webp" alt="">
         </div>
         <div class="relative z-10 text-stone-50 pt-16 pb-32 -mb-24 px-4 space-y-4">
             <h2 class="text-4xl font-bold opacity-0 translate-y-20 text-stone-50" data-view-animate="fadeIn"
@@ -239,49 +235,6 @@
                     Ver Servicios Extra
                 </button>
             </div>
-
-
-            <!--<div class="col-span-2 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    Sofa Individual-->
-            <!--</div>-->
-            <!--<div class="col-span-1 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    $100.00-->
-            <!--</div>-->
-            <!---->
-            <!--<div class="col-span-2 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    Sofa Cama-->
-            <!--</div>-->
-            <!--<div class="col-span-1 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    $100.00-->
-            <!--</div>-->
-            <!---->
-            <!--<div class="col-span-2 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    Colchon Individual-->
-            <!--</div>-->
-            <!--<div class="col-span-1 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    $100.00-->
-            <!--</div>-->
-            <!---->
-            <!--<div class="col-span-2 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    Colchon Matrimonial-->
-            <!--</div>-->
-            <!--<div class="col-span-1 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    $100.00-->
-            <!--</div>-->
-            <!---->
-            <!--<div class="col-span-2 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    Colchon Queen-->
-            <!--</div>-->
-            <!--<div class="col-span-1 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    $100.00-->
-            <!--</div>-->
-            <!---->
-            <!--<div class="col-span-2 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    Colchon King-->
-            <!--</div>-->
-            <!--<div class="col-span-1 p-4 text-stone-50 font-semibold rounded uppercase">-->
-            <!--    $100.00-->
-            <!--</div>-->
         </div>
         <svg class="fill-primary-dark rotate-180 -translate-y-px" xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 1440 320">
@@ -318,20 +271,6 @@
             </p>
         </div>
     </section>
-
-    <!--<section id="valores" class="relative z-0 space-y-4 py-20 px-4 md:px-12">-->
-    <!--    <div class="absolute inset-0 z-0">-->
-    <!--        <img class="h-full w-full object-cover brightness-50" src="/service_1.webp" alt="">-->
-    <!--    </div>-->
-    <!--    <div class="relative text-stone-50 flex flex-col gap-4 z-10">-->
-    <!--        <h2 class="text-4xl font-bold opacity-0 translate-y-20" data-view-animate="fadeIn">Visión</h2>-->
-    <!--        <p class="font-medium opacity-0 translate-y-20" data-view-animate="fadeIn">-->
-    <!--            Nuestra misión es generar un ambiente de bienestar mediante-->
-    <!--            la conservación de areas limpias y libres de plaga para asegurar la tranquilidad y salud de nuestros-->
-    <!--            clientes a un precio justo.-->
-    <!--        </p>-->
-    <!--    </div>-->
-    <!--</section>-->
 
     <section id="fumigacion" class="relative z-0 py-16 px-4 md:px-12">
         <div class="relative flex flex-col z-10 gap-4 xl:flex-row">
@@ -496,7 +435,7 @@
 
     <section id="vision" class="relative z-0 space-y-4 pt-20 pb-32 -mb-26 px-4 md:px-12">
         <div class="absolute inset-0 z-0">
-            <img class="h-full w-full object-cover brightness-50" src="/service_1.webp" alt="">
+            <img class="h-full w-full object-cover object-center brightness-50" src="/service_3.webp" alt="">
         </div>
         <div class="relative text-stone-50 flex flex-col gap-4 z-10">
             <h2 class="text-4xl font-bold opacity-0 translate-y-20" data-view-animate="fadeIn">Visión</h2>
@@ -517,8 +456,6 @@
             <div class="space-y-4 mb-10">
                 <img src="/logo_1.webp" alt="logo" class="w-48 mx-auto"
                     style="filter: drop-shadow(0px 10px 30px var(--color-secondary-dark))">
-                <!--<p class="text-6xl font-bold tracking-wider uppercase">Q&R</p>-->
-                <!--<p class="text-2xl font-medium">Estrellas de la limpieza</p>-->
             </div>
             <div class="space-y-2">
                 <h3 class="text-xl font-medium tracking-wide uppercase">Menu</h3>
@@ -597,9 +534,6 @@
         <div class="relative z-0">
             <div class="absolute inset-0 z-0">
                 <img src="/limpieza_sm.jpg" alt="" class="h-full w-full object-cover brightness-50">
-                <!--<video class="h-full max-w-full object-cover brightness-50 lg:w-full" src="/limpieza_qnr_car.mp4"-->
-                <!--    width="1280" height="720" autoplay loop muted>-->
-                <!--</video>-->
             </div>
             <div class="relative text-stone-50 z-10 pt-12 pb-24 px-4">
                 <p class="text-5xl font-bold">Estrellas de la limpieza</p>
