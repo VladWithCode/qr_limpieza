@@ -3,8 +3,8 @@ import * as animations from './animations.js';
 import { PopupManager } from './popupManager.js';
 //import './tablePopup.js';
 
-const COLOR_PRIMARY = '#f6f5f5ff';
-const COLOR_PRIMARY_TRANSPARENT = '#f6f5f500';
+const COLOR_PRIMARY = 'rgba(246, 245, 245, 1)';
+const COLOR_PRIMARY_TRANSPARENT = 'rgba(246, 245, 245, 0)';
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggler = document.querySelector('#menu-toggler');
