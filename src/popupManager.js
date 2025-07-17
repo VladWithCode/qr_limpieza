@@ -2,6 +2,7 @@ import gsap from 'gsap';
 // Popup Manager Class for reusable popup functionality
 export class PopupManager {
     constructor(config) {
+        this.openBtns = document.querySelectorAll(config.openBtnsSelector);
         this.openBtn = document.getElementById(config.openBtnId);
         this.closeBtn = document.getElementById(config.closeBtnId);
         this.popup = document.getElementById(config.popupId);
@@ -12,6 +13,13 @@ export class PopupManager {
         this.isAnimating = false;
         this.openTimeline = gsap.timeline({ paused: true });
         this.closeTimeline = gsap.timeline({ paused: true });
+
+        if (typeof config.handleOpenClick === 'function') {
+            this.handleOpenClick = config.handleOpenClick.bind(this);
+        }
+        if (typeof config.handleCloseClick === 'function') {
+            this.handleCloseClick = config.handleCloseClick.bind(this);
+        }
 
         this.init();
     }
@@ -90,21 +98,23 @@ export class PopupManager {
 
     initHoverAnimations() {
         // Open button hover effect
-        this.openBtn.addEventListener('mouseenter', () => {
-            gsap.to(this.openBtn, {
-                scale: 1.02,
-                duration: 0.2,
-                ease: "power2.out"
+        if (this.openBtn) {
+            this.openBtn.addEventListener('mouseenter', () => {
+                gsap.to(this.openBtn, {
+                    scale: 1.02,
+                    duration: 0.2,
+                    ease: "power2.out"
+                });
             });
-        });
 
-        this.openBtn.addEventListener('mouseleave', () => {
-            gsap.to(this.openBtn, {
-                scale: 1,
-                duration: 0.2,
-                ease: "power2.out"
+            this.openBtn.addEventListener('mouseleave', () => {
+                gsap.to(this.openBtn, {
+                    scale: 1,
+                    duration: 0.2,
+                    ease: "power2.out"
+                });
             });
-        });
+        }
 
         // Close button hover effect
         this.closeBtn.addEventListener('mouseenter', () => {
@@ -127,8 +137,34 @@ export class PopupManager {
     }
 
     bindEvents() {
-        this.openBtn.addEventListener('click', () => this.open());
-        this.closeBtn.addEventListener('click', () => this.close());
+        if (this.openBtns) {
+            for (const btn of this.openBtns) {
+                btn.addEventListener('click', e => {
+                    this.open()
+
+                    if (typeof this.handleOpenClick === 'function') {
+                        this.handleOpenClick(e);
+                    }
+                });
+            }
+        }
+        if (this.openBtn) {
+            this.openBtn.addEventListener('click', e => {
+                this.open()
+
+                if (typeof this.handleOpenClick === 'function') {
+                    this.handleOpenClick(e);
+                }
+            });
+        }
+
+        this.closeBtn.addEventListener('click', e => {
+            this.close()
+
+            if (typeof this.handleCloseClick === 'function') {
+                this.handleCloseClick(e);
+            }
+        });
 
         // Random image selection if images array is provided
         //if (this.images.length > 0) {

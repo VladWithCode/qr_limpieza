@@ -60,6 +60,19 @@ document.addEventListener('DOMContentLoaded', () => {
         imageContainerId: 'imageDetailsContainer',
     });
 
+    new PopupManager({
+        openBtnsSelector: '[data-product-image-btn]',
+        closeBtnId: 'closeProducts',
+        popupId: 'productsPopup',
+        imageId: 'productsDisplay',
+        imageContainerId: 'productsContainer',
+
+        handleOpenClick: function (e) {
+            const imageSrc = e.target.dataset.productImage;
+            this.image.src = imageSrc;
+        }
+    });
+
     function handleMenuToggle() {
         const tl = gsap.timeline({ defaults: { duration: 0.35, ease: 'power2.inOut' } });
         const isOpen = document.getElementById('menu').getAttribute('data-mobile-state') === 'open';
